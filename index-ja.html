@@ -685,21 +685,23 @@
                     </div>
                 </div>
             </div>
-            <form class="contact-form" action="https://formspree.io/f/mvgkybyp" method="POST">
-                <label for="name">お名前</label>
-                <input type="text" id="name" name="name" placeholder="お名前" required>
-                
-                <label for="email">メールアドレス</label>
-                <input type="email" id="email" name="email" placeholder="メールアドレス" required>
-                
-                <label for="subject">件名</label>
-                <input type="text" id="subject" name="subject" placeholder="件名">
-                
-                <label for="message">メッセージ</label>
-                <textarea id="message" name="message" placeholder="メッセージ" required></textarea>
-                
-                <button type="submit">送信する</button>
-            </form>
+
+            <form id="contactForm" class="contact-form" method="POST">
+    <label for="name">お名前</label>
+    <input type="text" id="name" name="name" placeholder="お名前" required>
+    
+    <label for="email">メールアドレス</label>
+    <input type="email" id="email" name="email" placeholder="メールアドレス" required>
+    
+    <label for="subject">件名</label>
+    <input type="text" id="subject" name="subject" placeholder="件名">
+    
+    <label for="message">メッセージ</label>
+    <textarea id="message" name="message" placeholder="メッセージ" required></textarea>
+    
+    <button type="submit">送信する</button>
+</form>
+
         </div>
     </section>
     
@@ -751,24 +753,48 @@
     <button onclick="topFunction()" id="backToTop" title="Go to top">↑</button>
 
     <!-- Scripts -->
-    <script>
-        // Hamburger Menu
-        document.querySelector('.hamburger').addEventListener('click', () => {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
+<script>
+    // Hamburger Menu
+    document.querySelector('.hamburger').addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.toggle('active');
+    });
 
-        // Back to Top
-        window.onscroll = function() {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                document.getElementById("backToTop").style.display = "block";
-            } else {
-                document.getElementById("backToTop").style.display = "none";
-            }
-        };
-
-        function topFunction() {
-            window.scrollTo({top: 0, behavior: 'smooth'});
+    // Back to Top
+    window.onscroll = function() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            document.getElementById("backToTop").style.display = "block";
+        } else {
+            document.getElementById("backToTop").style.display = "none";
         }
-    </script>
+    };
+
+    function topFunction() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+ 
+    // Form submission redirect
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // جلوگیری از رفتار پیش‌فرض فرم
+        const form = event.target;
+        const formData = new FormData(form);
+        
+        fetch('https://formspree.io/f/mvgkybyp', { // آیدی فرم خودت رو اینجا وارد کن
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                window.location.href = 'thank-you.html'; // ریدایرکت به صفحه تشکر
+            } else {
+                alert('エラーが発生しました。もう一度お試しください。');
+            }
+        }).catch(error => {
+            alert('エラーが発生しました。もう一度お試しください。');
+        });
+    });
+</script>
+
 </body>
 </html>
