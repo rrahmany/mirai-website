@@ -21,7 +21,7 @@
             --light-color: #f8f9fa;
             --accent-color: #ff6b6b;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
@@ -33,7 +33,7 @@
             line-height: 1.6;
             color: var(--dark-color);
             background-color: var(--light-color);
-            direction: rtl; /* تنظیم جهت راست به چپ */
+            direction: rtl;
         }
         
         .container {
@@ -70,7 +70,7 @@
         
         .logo img {
             height: 40px;
-            margin-left: 10px; /* تغییر برای RTL */
+            margin-left: 10px;
             transition: transform 0.3s ease;
         }
         
@@ -90,7 +90,7 @@
         }
         
         .nav-links li {
-            margin-right: 30px; /* تغییر برای RTL */
+            margin-right: 30px;
         }
         
         .nav-links a {
@@ -110,7 +110,7 @@
         }
         
         .language-switch a {
-            margin-right: 10px; /* تغییر برای RTL */
+            margin-right: 10px;
             text-decoration: none;
             color: var(--dark-color);
             font-size: 14px;
@@ -261,52 +261,6 @@
             font-size: 16px;
         }
         
-        .team-members {
-            margin-top: 30px;
-        }
-        
-        .team-members h3 {
-            font-size: 22px;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-        
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-        
-        .team-member {
-            display: flex;
-            align-items: center;
-        }
-        
-        .team-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-            margin-left: 15px; /* تغییر برای RTL */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 20px;
-        }
-        
-        .team-info h4 {
-            margin-bottom: 5px;
-            font-size: 18px;
-        }
-        
-        .team-info p {
-            font-size: 14px;
-            color: #666;
-            margin: 0;
-        }
-        
         /* Contact Section */
         .contact {
             padding: 100px 0;
@@ -342,7 +296,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-left: 15px; /* تغییر برای RTL */
+            margin-left: 15px;
         }
         
         .contact-icon i {
@@ -407,36 +361,7 @@
         
         .footer-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-        }
-        
-        .footer-logo img {
-            height: 30px;
-            margin-left: 10px; /* تغییر برای RTL */
-            transition: transform 0.3s ease;
-        }
-        
-        .footer-logo img:hover {
-            transform: scale(1.1);
-        }
-        
-        .footer-about p {
-            margin-bottom: 20px;
-            color: #fff;
-        }
-        
-        .footer-links h3 {
+            grid-template-columns: repeat(auto-fit, minh3 {
             font-size: 18px;
             margin-bottom: 20px;
             color: white;
@@ -472,7 +397,7 @@
         #backToTop {
             position: fixed;
             bottom: 20px;
-            left: 20px; /* تغییر برای RTL */
+            left: 20px;
             background-color: var(--primary-color);
             color: white;
             border: none;
@@ -498,7 +423,7 @@
                 flex-direction: column;
                 position: absolute;
                 top: 60px;
-                right: 0; /* تغییر برای RTL */
+                right: 0;
                 width: 100%;
                 background-color: white;
                 padding: 20px 0;
@@ -540,10 +465,6 @@
                 font-size: 28px;
             }
             
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .logo img {
                 height: 30px;
             }
@@ -576,7 +497,7 @@
             </div>
         </div>
     </header>
-    
+
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
@@ -585,7 +506,7 @@
             <a href="#contact" class="cta-button">تماس با ما</a>
         </div>
     </section>
-    
+
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
@@ -625,7 +546,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container about-container">
@@ -633,33 +554,13 @@
                 <h2>درباره ما</h2>
                 <p>شرکت میرای تکنو در فناوری کامپیوتر، تحقیق و توسعه فناوری اطلاعات، راهکارهای انرژی تجدیدپذیر، خدمات واردات/صادرات و مشاوره برای کسب‌وکارها تخصص دارد.</p>
                 <p>ما در ژانویه 2025 تأسیس شدیم و هدفمان کمک به خلق آینده‌ای بهتر از طریق فناوری نوآورانه و راهکارهای پایدار است.</p>
-                
-                <div class="team-members">
-                    <h3>تیم مدیریتی</h3>
-                    <div class="team-grid">
-                        <div class="team-member">
-                            <div class="team-avatar">ر</div>
-                            <div class="team-info">
-                                <h4>رضا رحمانی</h4>
-                                <p>شریک مدیر</p>
-                            </div>
-                        </div>
-                        <div class="team-member">
-                            <div class="team-avatar">س</div>
-                            <div class="team-info">
-                                <h4>سمیه طاهری</h4>
-                                <p>شریک مدیر</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="about-image">
                 <img src="images/office.webp" alt="ساختمان دفتر - شرکت میرای تکنو" width="600" height="400" loading="lazy">
             </div>
         </div>
     </section>
-    
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container contact-container">
@@ -699,7 +600,7 @@
             </form>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer>
         <div class="container">
